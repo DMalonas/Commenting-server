@@ -1,4 +1,4 @@
-package org.stacspics.rest;
+package myRestWebServices;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.PathParam;
