@@ -1,5 +1,8 @@
 package myRestWebServices;
 
+import application.PhotosRepository;
+import application.UsersPopulation;
+import utilities.MyUtilitiesClass;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
@@ -15,6 +18,9 @@ public class Main {
     public static HttpServer startServer() {
         // create a resource config that scans for JAX-RS resources and providers
         // in org.stacscal.rest package
+        PhotosRepository photosRepository = new PhotosRepository();
+        UsersPopulation usersPopulation = new UsersPopulation();
+        MyUtilitiesClass.createInitialPopulations(photosRepository, usersPopulation);
         final ResourceConfig rc = new ResourceConfig().packages("myRESTWebServices");
         // create and start a new instance of grizzly http server
         // exposing the Jersey application at BASE_URI
