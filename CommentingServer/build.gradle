@@ -10,7 +10,7 @@
 apply plugin: 'java-library'
 apply plugin: 'java'
 apply plugin: 'eclipse'
-//apply plugin: 'checkstyle'
+apply plugin: 'checkstyle'
 
 
 // In this section you declare where to find the dependencies of your project
@@ -20,10 +20,10 @@ repositories {
     jcenter()
 }
 
-//checkstyle {
-  //      toolVersion "7.6.1"	// https://discuss.gradle.org/t/checkstyle-checker-cannot-be-created-with-gradle-3-5/22474/3
-    //    configFile rootProject.file("config/checkstyle/checkstyle.xml")
-    //}
+checkstyle {
+        toolVersion "7.6.1"	// https://discuss.gradle.org/t/checkstyle-checker-cannot-be-created-with-gradle-3-5/22474/3
+        configFile rootProject.file("config/checkstyle/checkstyle.xml")
+    }
 
 ext.jerseyVersion = '2.26'
 
@@ -47,3 +47,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
     
 }
+

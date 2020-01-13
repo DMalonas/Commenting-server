@@ -47,7 +47,8 @@ public class AuthenticateUserWS {
       }
     } else {
       return Response.status(Response.Status.BAD_REQUEST).build(); // else send bad request
-    } 
+    }
+ 
     if (count != 2) {
       return Response.ok().entity("Wrong Parameters").build();
     }
